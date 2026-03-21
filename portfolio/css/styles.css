@@ -1,0 +1,224 @@
+/* ==============================================
+   개발자 포트폴리오 커스텀 CSS 스타일
+   ============================================== */
+
+/* ───────────────────────────────────────────
+   기본 스타일 및 애니메이션
+   ─────────────────────────────────────────── */
+
+/* Fade in 애니메이션 정의 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in 클래스 적용 */
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* 스크롤 시 등장하는 요소들을 위한 초기 상태 */
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ───────────────────────────────────────────
+   네비게이션 스타일
+   ─────────────────────────────────────────── */
+
+/* 네비게이션 링크 활성 상태 */
+.nav-link.active {
+    color: rgb(79, 70, 229); /* indigo-600 */
+    font-weight: 600;
+    border-bottom: 2px solid rgb(79, 70, 229);
+}
+
+.dark .nav-link.active {
+    color: rgb(129, 140, 248); /* indigo-400 */
+    border-bottom-color: rgb(129, 140, 248);
+}
+
+/* ───────────────────────────────────────────
+   카드 스타일 및 호버 효과
+   ─────────────────────────────────────────── */
+
+/* 프로젝트 카드 호버 효과 */
+.project-card {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ───────────────────────────────────────────
+   스크롤 부드러운 동작
+   ─────────────────────────────────────────── */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ───────────────────────────────────────────
+   다크모드 커스텀 변수
+   ─────────────────────────────────────────── */
+
+:root {
+    /* 라이트 모드 색상 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --accent-color: #4f46e5;
+}
+
+.dark {
+    /* 다크 모드 색상 */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --accent-color: #818cf8;
+}
+
+/* ───────────────────────────────────────────
+   버튼 스타일
+   ─────────────────────────────────────────── */
+
+button {
+    transition: all 0.3s ease-out;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ───────────────────────────────────────────
+   폼 입력 요소 스타일
+   ─────────────────────────────────────────── */
+
+input,
+textarea {
+    transition: all 0.3s ease-out;
+}
+
+input:focus,
+textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* ───────────────────────────────────────────
+   반응형 디자인 조정
+   ─────────────────────────────────────────── */
+
+/* 모바일 기기 */
+@media (max-width: 640px) {
+    /* 모바일에서 큰 제목 크기 조정 */
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* 컨테이너 패딩 조정 */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* 태블릿 이상 */
+@media (min-width: 768px) {
+    /* 데스크톱 특화 스타일 */
+}
+
+/* ───────────────────────────────────────────
+   접근성 개선
+   ─────────────────────────────────────────── */
+
+/* 포커스 가능한 요소 포커스 스타일 */
+a:focus,
+button:focus {
+    outline: 2px solid rgb(79, 70, 229);
+    outline-offset: 2px;
+}
+
+.dark a:focus,
+.dark button:focus {
+    outline-color: rgb(129, 140, 248);
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ───────────────────────────────────────────
+   인쇄 스타일
+   ─────────────────────────────────────────── */
+
+@media print {
+    /* 인쇄 시 배경색 제거 */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    /* 인쇄 시 헤더 숨김 */
+    header {
+        display: none;
+    }
+
+    /* 인쇄 시 링크 강조 */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* ───────────────────────────────────────────
+   성능 최적화
+   ─────────────────────────────────────────── */
+
+/* GPU 가속 애니메이션 */
+.fade-in,
+.fade-in-scroll {
+    will-change: opacity, transform;
+}
+
+/* 트랜지션 활성화 */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 버튼과 링크는 빠른 트랜지션 */
+a,
+button {
+    transition: all 0.2s ease-out;
+}

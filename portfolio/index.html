@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="김준범 - 내과 의사 레지던트 포트폴리오 및 이력서">
+    <meta name="keywords" content="의료, 내과, 레지던트, 강동성심병원, 의료진">
+    <meta property="og:title" content="김준범 - 내과 의사 레지던트">
+    <meta property="og:description" content="내과 의사 포트폴리오 이력서">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Medical+Portfolio">
+
+    <title>김준범 - 내과 의사 레지던트 포트폴리오</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwindConfig = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- 네비게이션 헤더 -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- 이름 로고 -->
+            <div class="text-xl font-bold text-blue-600 dark:text-blue-400">
+                김준범
+            </div>
+
+            <!-- 데스크톱 네비게이션 -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                    소개
+                </a>
+                <a href="#experience" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                    경력
+                </a>
+                <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                    진료
+                </a>
+                <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                    연락
+                </a>
+            </nav>
+
+            <!-- 다크모드 토글 + Get In Touch 버튼 + 모바일 햄버거 -->
+            <div class="flex items-center gap-3">
+                <!-- 다크모드 토글 버튼 -->
+                <button id="darkModeToggle" class="hidden md:block p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 1.78a1 1 0 011.415 0l1.414 1.414a1 1 0 01-1.415 1.415L14.22 5.195a1 1 0 010-1.415zm2.828 2.828a1 1 0 011.415 0l1.414 1.414a1 1 0 01-1.415 1.415l-1.414-1.414a1 1 0 010-1.415zm2.828 2.829a1 1 0 011.415 0l1.414 1.414a1 1 0 01-1.415 1.415l-1.414-1.414a1 1 0 010-1.415zM10 5a1 1 0 011 1v2a1 1 0 11-2 0V6a1 1 0 011-1zm0 9a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zm7.07-7.07a1 1 0 010 1.415l-1.414 1.414a1 1 0 11-1.415-1.415l1.414-1.414a1 1 0 011.415 0zM5.07 5.07a1 1 0 010 1.415L3.657 7.99a1 1 0 10-1.415-1.415L3.656 5.07a1 1 0 011.415 0zm0 9.9a1 1 0 010 1.415l-1.414 1.414a1 1 0 01-1.415-1.415l1.414-1.414a1 1 0 011.415 0zM5 10a5 5 0 1110 0 5 5 0 01-10 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </button>
+
+                <!-- Get In Touch 버튼 -->
+                <a href="#contact" class="hidden sm:inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
+                    연락하기
+                </a>
+
+                <!-- 모바일 햄버거 버튼 -->
+                <button id="menuToggle" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg id="menuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="closeIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 네비게이션 메뉴 -->
+        <nav id="mobileMenu" class="hidden md:hidden bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
+                <a href="#about" class="nav-link block px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    소개
+                </a>
+                <a href="#experience" class="nav-link block px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    경력
+                </a>
+                <a href="#skills" class="nav-link block px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    진료
+                </a>
+                <a href="#contact" class="nav-link block px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    연락
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 히어로 섹션 -->
+        <section id="hero" class="py-20 md:py-32 bg-gradient-to-br from-sky-100 to-blue-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+            <!-- 도트 패턴 배경 -->
+            <div class="absolute inset-0 opacity-20 dark:opacity-10" style="background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                    <!-- 왼쪽: 텍스트 -->
+                    <div class="fade-in">
+                        <!-- 이름 타이틀 -->
+                        <div class="mb-6">
+                            <p class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">안녕하세요</p>
+                            <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                                I am <span class="text-blue-600 dark:text-blue-400">김준범</span>
+                            </h1>
+                        </div>
+
+                        <!-- 직책 -->
+                        <p class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+                            내과 의사 레지던트 3년차
+                        </p>
+
+                        <!-- 소개 -->
+                        <p class="text-gray-700 dark:text-gray-300 text-lg mb-8 leading-relaxed">
+                            강동성심병원에서 내과 레지던트 3년차로 근무 중입니다. 환자 중심의 진료와 지속적인 의학 지식 습득을 통해 더 나은 의료 서비스 제공에 힘쓰고 있습니다. 운동을 취미로 건강한 생활을 유지하며, 항상 발전해 나가려 노력합니다.
+                        </p>
+
+                        <!-- CTA 버튼 -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center">
+                                이력서 보기
+                            </a>
+                            <a href="#contact" class="inline-block px-8 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-semibold rounded-lg border-2 border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors text-center">
+                                연락하기
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 프로필 이미지 -->
+                    <div class="fade-in flex justify-center">
+                        <div class="relative w-72 h-72 md:w-96 md:h-96">
+                            <!-- 파란 배경 원 -->
+                            <div class="absolute inset-0 rounded-full bg-blue-200 dark:bg-blue-900 opacity-50"></div>
+                            <!-- 프로필 원형 이미지 -->
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-600 dark:to-blue-800 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                                <span class="text-9xl md:text-10xl">⚕️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 소개 섹션 -->
+        <section id="about" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-2 text-center">
+                    About Me
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-16">
+                    의료 전문가로서의 나의 여정
+                </p>
+
+                <!-- 2열 레이아웃 -->
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+                    <!-- 왼쪽: 긴 설명 텍스트 -->
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+                            나의 의료 여정
+                        </h3>
+                        <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <p class="text-lg leading-relaxed">
+                                의료를 통해 환자들을 도울 수 있다는 소명으로 의학의 길을 시작하였습니다. 의과대학에서의 기초 학습에서부터 강동성심병원에서의 실제 임상 경험까지, 매 순간이 저를 성장시켰습니다.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                현재 레지던트 3년차로서 다양한 내과 질환의 진단과 치료에 대해 배우고 있습니다. 심혈관 질환, 호흡기 질환, 감염성 질환, 신진대사 질환 등 광범위한 분야에서 임상 경험을 쌓고 있으며, 각 질환의 최신 진료 가이드라인을 학습하고 적용하고 있습니다.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                저는 단순히 질병을 치료하는 것이 아닌, 환자와의 신뢰 관계를 구축하고 최상의 의료 서비스를 제공하는 것에 중점을 두고 있습니다. 또한 후배 의료진들을 멘토링함으로써 의료 공동체의 발전에 기여하고자 합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 카드들 -->
+                    <div class="grid grid-cols-1 gap-6 fade-in">
+                        <!-- 카드 1 -->
+                        <div class="bg-sky-50 dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-600">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl flex-shrink-0">❤️</div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
+                                        환자 중심 진료
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        환자의 증상과 요구를 주의 깊게 경청하고, 최적의 치료 방안을 제시합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="bg-sky-50 dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-600">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl flex-shrink-0">📚</div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
+                                        의학 지식 습득
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        최신 의학 가이드라인과 임상 연구에 대해 꾸준히 학습하고 적용합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="bg-sky-50 dark:bg-gray-800 p-6 rounded-lg border-l-4 border-blue-600">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl flex-shrink-0">🤝</div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
+                                        임상 역량 강화
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        다양한 질환의 진단과 치료 경험을 통해 의료 전문성을 높입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 경력 섹션 -->
+        <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    경력
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
+                    업무 경력 및 성과
+                </p>
+
+                <!-- 타임라인 -->
+                <div class="max-w-3xl mx-auto">
+                    <!-- 경력 1 -->
+                    <div class="mb-8 fade-in">
+                        <div class="flex gap-4 md:gap-8">
+                            <!-- 타임라인 라인 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-600 dark:bg-indigo-400"></div>
+                                <div class="w-1 h-20 bg-indigo-200 dark:bg-blue-900"></div>
+                            </div>
+
+                            <!-- 경력 정보 -->
+                            <div class="pb-8">
+                                <h3 class="text-xl font-bold mb-1">
+                                    내과 레지던트 3년차
+                                </h3>
+                                <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                                    강동성심병원
+                                </p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                    2022년 03월 ~ 현재 (3년차)
+                                </p>
+                                <ul class="text-gray-700 dark:text-gray-300 space-y-2 text-sm">
+                                    <li>• 다양한 내과 질환의 진단 및 치료 경험</li>
+                                    <li>• 환자 진료 및 후배 의사 멘토링</li>
+                                    <li>• 최신 의학 가이드라인 학습 및 적용</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 경력 2 -->
+                    <div class="mb-8 fade-in">
+                        <div class="flex gap-4 md:gap-8">
+                            <!-- 타임라인 라인 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-600 dark:bg-indigo-400"></div>
+                                <div class="w-1 h-20 bg-indigo-200 dark:bg-blue-900"></div>
+                            </div>
+
+                            <!-- 경력 정보 -->
+                            <div class="pb-8">
+                                <h3 class="text-xl font-bold mb-1">
+                                    내과 레지던트 1-2년차
+                                </h3>
+                                <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                                    강동성심병원
+                                </p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                    2021년 03월 ~ 2022년 02월
+                                </p>
+                                <ul class="text-gray-700 dark:text-gray-300 space-y-2 text-sm">
+                                    <li>• 기본적인 내과 진료 기술 습득</li>
+                                    <li>• 선배 의사들로부터 임상 교육 받음</li>
+                                    <li>• 다양한 임상 증례 경험</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 경력 3 -->
+                    <div class="fade-in">
+                        <div class="flex gap-4 md:gap-8">
+                            <!-- 타임라인 라인 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-600 dark:bg-indigo-400"></div>
+                            </div>
+
+                            <!-- 경력 정보 -->
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">
+                                    의료 교육
+                                </h3>
+                                <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                                    의과 대학 졸업
+                                </p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                    2015년 03월 ~ 2021년 02월
+                                </p>
+                                <ul class="text-gray-700 dark:text-gray-300 space-y-2 text-sm">
+                                    <li>• 의학 기초 및 임상 교육 이수</li>
+                                    <li>• 국가고시 합격 및 의료진 면허 취득</li>
+                                    <li>• 임상 실습을 통한 의료 현장 경험</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 기술 섹션 -->
+        <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    기술
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
+                    사용 가능한 기술 스택
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- 진단 능력 -->
+                    <div class="fade-in">
+                        <h3 class="text-xl font-bold mb-6 text-center">
+                            진단 능력
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">신체 검진</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">임상 진단</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">의료 영상 해석</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 임상 지식 -->
+                    <div class="fade-in">
+                        <h3 class="text-xl font-bold mb-6 text-center">
+                            임상 지식
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">내과 질환</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">약물 치료</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">진료 가이드라인</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 의료 기술 -->
+                    <div class="fade-in">
+                        <h3 class="text-xl font-bold mb-6 text-center">
+                            의료 기술
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">진료 기록</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">의료 정보 시스템</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="font-semibold mb-2">의학 문헌 검색</p>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프로젝트 섹션 -->
+        <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    프로젝트
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
+                    주요 포트폴리오 프로젝트
+                </p>
+
+                <!-- 프로젝트 그리드 -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- 임상 경험 1 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow fade-in">
+                        <!-- 이미지 -->
+                        <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                            <span class="text-6xl">🫀</span>
+                        </div>
+
+                        <!-- 정보 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                심혈관 질환 진료
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                고혈압, 부정맥, 심부전 등 심혈관 질환 환자 진료. 심전도 해석, 약물 치료 관리, 환자 교육을 담당했습니다.
+                            </p>
+
+                            <!-- 기술 태그 -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold rounded-full">
+                                    심전도 해석
+                                </span>
+                                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-semibold rounded-full">
+                                    약물 관리
+                                </span>
+                            </div>
+
+                            <!-- 링크 -->
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-center text-sm transition-colors">
+                                    더 보기
+                                </a>
+                                <a href="#" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold rounded-lg text-center text-sm transition-colors">
+                                    상세 정보
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 임상 경험 2 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow fade-in">
+                        <!-- 이미지 -->
+                        <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                            <span class="text-6xl">🫁</span>
+                        </div>
+
+                        <!-- 정보 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                호흡기 질환 진료
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                폐렴, 천식, 만성폐쇄질환(COPD) 등 호흡기 질환 환자 진료. 흉부 X선 해석, 폐기능 검사 판독, 치료 방침 수립을 경험했습니다.
+                            </p>
+
+                            <!-- 기술 태그 -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold rounded-full">
+                                    영상 해석
+                                </span>
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold rounded-full">
+                                    진료 가이드라인
+                                </span>
+                            </div>
+
+                            <!-- 링크 -->
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-center text-sm transition-colors">
+                                    더 보기
+                                </a>
+                                <a href="#" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold rounded-lg text-center text-sm transition-colors">
+                                    상세 정보
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 임상 경험 3 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow fade-in">
+                        <!-- 이미지 -->
+                        <div class="h-48 bg-gradient-to-br from-pink-400 to-orange-500 flex items-center justify-center">
+                            <span class="text-6xl">🔬</span>
+                        </div>
+
+                        <!-- 정보 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                감염성 질환 진료
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                세균 감염, 바이러스 감염, 패혈증 등 감염성 질환 환자 진료. 항생제 선택, 감염 표지자 해석, 환자 관리를 경험했습니다.
+                            </p>
+
+                            <!-- 기술 태그 -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs font-semibold rounded-full">
+                                    항생제 관리
+                                </span>
+                                <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs font-semibold rounded-full">
+                                    감염 진료
+                                </span>
+                            </div>
+
+                            <!-- 링크 -->
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-center text-sm transition-colors">
+                                    더 보기
+                                </a>
+                                <a href="#" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold rounded-lg text-center text-sm transition-colors">
+                                    상세 정보
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 임상 경험 4 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow fade-in">
+                        <!-- 이미지 -->
+                        <div class="h-48 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center">
+                            <span class="text-6xl">💪</span>
+                        </div>
+
+                        <!-- 정보 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                신진대사 및 내분비 질환
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                당뇨병, 갑상선 질환, 이상지질혈증 등 신진대사 질환 환자 진료. 혈당 관리, 갑상선 호르몬 해석, 장기 합병증 관리를 경험했습니다.
+                            </p>
+
+                            <!-- 기술 태그 -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs font-semibold rounded-full">
+                                    당뇨 관리
+                                </span>
+                                <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs font-semibold rounded-full">
+                                    호르몬 질환
+                                </span>
+                            </div>
+
+                            <!-- 링크 -->
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-center text-sm transition-colors">
+                                    더 보기
+                                </a>
+                                <a href="#" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold rounded-lg text-center text-sm transition-colors">
+                                    상세 정보
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락 섹션 -->
+        <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    연락하기
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
+                    저와 연락할 수 있는 방법들입니다
+                </p>
+
+                <div class="max-w-2xl mx-auto">
+                    <!-- 연락 정보 -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12 fade-in">
+                        <!-- 이메일 -->
+                        <a href="mailto:pnixman2@naver.com" class="group bg-gray-50 dark:bg-gray-800 p-8 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-indigo-900 transition-colors">
+                            <div class="text-4xl mb-4">📧</div>
+                            <h3 class="text-xl font-bold mb-2">
+                                이메일
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                pnixman2@naver.com
+                            </p>
+                        </a>
+
+                        <!-- 깃허브 -->
+                        <a href="https://github.com/pnixman" target="_blank" class="group bg-gray-50 dark:bg-gray-800 p-8 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-indigo-900 transition-colors">
+                            <div class="text-4xl mb-4">💻</div>
+                            <h3 class="text-xl font-bold mb-2">
+                                GitHub
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                github.com/pnixman
+                            </p>
+                        </a>
+
+                        <!-- 링크드인 -->
+                        <a href="https://linkedin.com" target="_blank" class="group bg-gray-50 dark:bg-gray-800 p-8 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-indigo-900 transition-colors">
+                            <div class="text-4xl mb-4">💼</div>
+                            <h3 class="text-xl font-bold mb-2">
+                                LinkedIn
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                linkedin.com/in/junbum-kim
+                            </p>
+                        </a>
+
+                        <!-- 블로그 -->
+                        <a href="https://blog.example.com" target="_blank" class="group bg-gray-50 dark:bg-gray-800 p-8 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-indigo-900 transition-colors">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h3 class="text-xl font-bold mb-2">
+                                의료 블로그
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                blog.example.com
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- 연락 양식 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg fade-in">
+                        <h3 class="text-2xl font-bold mb-6">
+                            메시지 보내기
+                        </h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold mb-2">
+                                    이름
+                                </label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold mb-2">
+                                    이메일
+                                </label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-semibold mb-2">
+                                    메시지
+                                </label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
+                                메시지 전송
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNS 섹션 -->
+        <section id="social" class="py-20 bg-gradient-to-r from-blue-600 to-blue-600 dark:from-blue-700 dark:to-blue-700">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-white">
+                    SNS & 소셜 미디어
+                </h2>
+                <p class="text-center text-indigo-100 mb-12 text-lg">
+                    저의 작업과 일상을 팔로우해주세요!
+                </p>
+
+                <!-- SNS 아이콘 그리드 -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <!-- GitHub -->
+                        <a href="https://github.com/pnixman" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all transform hover:scale-105 fade-in">
+                            <div class="text-4xl mb-3">
+                                <svg class="w-10 h-10 text-gray-900 dark:text-white fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-900 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                GitHub
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 text-center">
+                                코드 및 프로젝트
+                            </p>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all transform hover:scale-105 fade-in">
+                            <div class="text-4xl mb-3">
+                                <svg class="w-10 h-10 text-red-600 fill-current" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-900 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                YouTube
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 text-center">
+                                튜토리얼 및 프리뷰
+                            </p>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all transform hover:scale-105 fade-in">
+                            <div class="text-4xl mb-3">
+                                <svg class="w-10 h-10 fill-current" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-900 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Instagram
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 text-center">
+                                일상과 작업
+                            </p>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all transform hover:scale-105 fade-in">
+                            <div class="text-4xl mb-3">
+                                <svg class="w-10 h-10 text-blue-700 fill-current" viewBox="0 0 24 24">
+                                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-900 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                LinkedIn
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 text-center">
+                                전문 네트워크
+                            </p>
+                        </a>
+
+                        <!-- Twitter/X -->
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all transform hover:scale-105 fade-in">
+                            <div class="text-4xl mb-3">
+                                <svg class="w-10 h-10 text-black dark:text-white fill-current" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694-5.829 6.694h-3.328l7.719-8.835-8.156-10.665h6.509l4.806 6.352 5.614-6.352zM16.847 20.033h1.829L5.556 3.542H3.614l13.233 16.491z"/>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-900 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                X (Twitter)
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 text-center">
+                                최신 뉴스 및 생각
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- SNS 팔로우 유도 텍스트 -->
+                    <div class="mt-12 text-center">
+                        <p class="text-white text-lg mb-6">
+                            🔗 위의 SNS를 팔로우하고 최신 개발 소식을 받아보세요!
+                        </p>
+                        <button class="px-8 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-semibold rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
+                            모두 팔로우하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">
+                © 2024 김준범. All rights reserved.
+            </p>
+            <p class="text-gray-400 text-sm">
+                강동성심병원 내과 레지던트 | 내과 의사
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
